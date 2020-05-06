@@ -1,1 +1,1 @@
-# shibaclicker
+# dogclicker
