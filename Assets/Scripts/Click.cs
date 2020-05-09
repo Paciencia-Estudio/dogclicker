@@ -10,9 +10,10 @@ public class Click : MonoBehaviour
     [SerializeField]
     private AudioSource source;
     [SerializeField]
-    private AudioClip audioc;
+    private AudioClip[] audios;
 
-    public AudioClip[] audios;
+    [SerializeField]
+    TextMeshProUGUI pontos;
     short clipPick;
      
     
@@ -20,21 +21,27 @@ public class Click : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        PrintaPontuacao();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void Clicked(TextMeshProUGUI pontos)
+    public void Clicked()
     {
         clipPick = (short)Random.Range(0, audios.Length);
     
         num++;
         pontos.text = num.ToString();
         source.PlayOneShot(audios[clipPick]);
+    }
+
+    public void SaveClose()
+    {
+        PlayerPrefs.SetInt("pontos", num);
+        Application.Quit();
+    }
+
+    void PrintaPontuacao()
+    {
+        num = PlayerPrefs.GetInt("pontos", 0);
+        pontos.text = num.ToString();
     }
 }
