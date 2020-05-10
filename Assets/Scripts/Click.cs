@@ -5,7 +5,7 @@ using TMPro;
 
 public class Click : MonoBehaviour
 {
-    private int num = 0;
+    private static int num = 0;
 
     [SerializeField]
     private AudioSource source;
