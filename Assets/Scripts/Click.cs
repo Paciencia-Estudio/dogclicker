@@ -24,21 +24,24 @@ public class Click : MonoBehaviour
         PrintaPontuacao();
     }
 
+    //Função básica do click
     public void Clicked()
     {
-        clipPick = (short)Random.Range(0, audios.Length);
+        clipPick = (short)Random.Range(0, audios.Length); //sorteia um som
     
-        num++;
+        num++; 
         pontos.text = num.ToString();
         source.PlayOneShot(audios[clipPick]);
     }
 
+    //Salva a pontuação atual no playerPrefs e fecha o jogo no Android
     public void SaveClose()
     {
         PlayerPrefs.SetInt("pontos", num);
         Application.Quit();
     }
 
+    //Pega os pontos do PlayerPrefs e coloca no Game
     void PrintaPontuacao()
     {
         num = PlayerPrefs.GetInt("pontos", 0);
