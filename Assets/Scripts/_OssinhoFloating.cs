@@ -8,6 +8,7 @@ public class _OssinhoFloating : MonoBehaviour
     public bool test;
 
     private Vector2 myPos;
+    private Vector2 myStartPos;
     private RectTransform myRectTrans;
     private Image image;
   
@@ -15,15 +16,24 @@ public class _OssinhoFloating : MonoBehaviour
     {
         myRectTrans = GetComponent<RectTransform>();
         image = GetComponent<Image>();
+        myStartPos = myRectTrans.anchoredPosition;
     }
     void Update()
     {
-        if(test)
-        {
-            myPos = myRectTrans.anchoredPosition;
-            StartCoroutine(FuncFloat());
-            test = false;
-        }
+        // if(test)
+        // {
+        //     myRectTrans.anchoredPosition = myStartPos;
+        //     myPos = myRectTrans.anchoredPosition;
+        //     StartCoroutine(FuncFloat());
+        //     test = false;
+        // }
+    }
+
+    public void OssinhoFloat()
+    {
+        myRectTrans.anchoredPosition = myStartPos;
+        myPos = myRectTrans.anchoredPosition;
+        StartCoroutine(FuncFloat());
     }
 
     IEnumerator FuncFloat()

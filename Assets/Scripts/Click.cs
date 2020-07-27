@@ -5,7 +5,7 @@ using TMPro;
 
 public class Click : MonoBehaviour
 {
-    private static int num = 0;
+    private int num = 0;
 
     [SerializeField]
     private AudioSource source;
@@ -21,7 +21,7 @@ public class Click : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PrintaPontuacao();
+        //PrintaPontuacao();
     }
 
     //Função básica do click
