@@ -47,4 +47,6 @@ public class Click : MonoBehaviour
         num = PlayerPrefs.GetInt("pontos", 0);
         pontos.text = num.ToString();
     }
+
+    public int Points {get {return num;}}
 }

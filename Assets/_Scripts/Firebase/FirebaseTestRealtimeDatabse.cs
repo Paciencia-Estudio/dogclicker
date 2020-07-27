@@ -24,8 +24,8 @@ public class FirebaseTestRealtimeDatabse : MonoBehaviour
         
     }
 
-    void EnviarParaRTD(int pontos)
+    public void EnviarParaRTD(int pontos)
     {
-        //reference.SetValueAsync(pontos)
+        reference.SetValueAsync(pontos);
     }
 }
