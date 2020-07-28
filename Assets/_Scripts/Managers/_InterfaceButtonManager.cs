@@ -12,4 +12,9 @@ public class _InterfaceButtonManager : MonoBehaviour
     {
         firebaseTest.EnviarParaRTD(clickM.Points);
     }
+
+    public void _GetPointsFromDatabase()
+    {
+        firebaseTest.PegarRTD();
+    }
 }

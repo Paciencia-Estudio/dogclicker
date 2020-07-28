@@ -4,17 +4,21 @@ using UnityEngine;
 using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
+using Firebase.Analytics;
 
 public class FirebaseTestRealtimeDatabse : MonoBehaviour
 {
-    DatabaseReference reference;
     void Start()
     {
+        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith( continuationAction: task =>
+        {
+            FirebaseAnalytics.SetAnalyticsCollectionEnabled(true);
+        });
         // Set this before calling into the realtime database.
-        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://dogvillage-66857.firebaseio.com/");
+        //FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://dogvillage-66857.firebaseio.com/");
 
         // Get the root reference location of the database.
-        reference = FirebaseDatabase.DefaultInstance.RootReference;
+        //DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
 
     }
 
@@ -26,6 +30,23 @@ public class FirebaseTestRealtimeDatabse : MonoBehaviour
 
     public void EnviarParaRTD(int pontos)
     {
-        reference.SetValueAsync(pontos);
+        FirebaseDatabase.DefaultInstance
+        .GetReference("Leaders").SetValueAsync(pontos);
+    }
+
+    public void PegarRTD()
+    {
+        FirebaseDatabase.DefaultInstance
+        .GetReference("Leaders")
+        .GetValueAsync().ContinueWith(task => {
+        if (task.IsFaulted) {
+            // Handle the error...
+            Debug.Log("Deu erro aqui hein");
+        }
+        else if (task.IsCompleted) {
+            DataSnapshot snapshot = task.Result;
+            Debug.Log("É isso que resultou: " + snapshot);
+        }
+    });
     }
 }
