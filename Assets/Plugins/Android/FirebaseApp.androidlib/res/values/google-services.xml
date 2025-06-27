@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
+  <string name="gcm_defaultSenderId" translatable="false">194047099923</string>
+  <string name="google_storage_bucket" translatable="false">dogeclicker2025.firebasestorage.app</string>
+  <string name="project_id" translatable="false">dogeclicker2025</string>
+  <string name="google_api_key" translatable="false">AIzaSyD94YkMyEOBcZGhRc7bPspvAKQXqYa6-G0</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyD94YkMyEOBcZGhRc7bPspvAKQXqYa6-G0</string>
+  <string name="google_app_id" translatable="false">1:194047099923:android:a82e7e2e947f9f584d6be6</string>
+</resources>
