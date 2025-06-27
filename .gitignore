@@ -43,6 +43,14 @@ ExportedObj/
 *.opendb
 *.VC.db
 
+# https://github-wiki-see.page/m/interaction-lab/MoveToCode/wiki/Firebase-Setup
+/[Aa]ssets/Data*
+/[Aa]ssets/Firebase*
+
+# https://github-wiki-see.page/m/interaction-lab/MoveToCode/wiki/Firebase-Setup
+/[Aa]ssets/Data
+/[Aa]ssets/Firebase
+
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
